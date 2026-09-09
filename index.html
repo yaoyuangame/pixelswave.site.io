@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Wave Game Studio</title>
+    <style>
+        :root {
+            --bg: #f4fbfd;
+            --ink: #0f2f3a;
+            --muted: #5b7a84;
+            --accent-a: #0ea5e9;
+            --accent-b: #14b8a6;
+            --border: #d7ecf1;
+            --card: #ffffff;
+            --grad: linear-gradient(120deg, #0ea5e9 0%, #14b8a6 100%);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: var(--bg);
+            background: radial-gradient(1000px 500px at 100% -10%, rgba(14,165,233,0.10), transparent 60%),
+                        radial-gradient(900px 500px at -10% 10%, rgba(20,184,166,0.10), transparent 60%),
+                        var(--bg);
+            color: var(--ink);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        .wrap { max-width: 980px; margin: 0 auto; padding: 0 28px; }
+
+        nav { display: flex; align-items: center; justify-content: space-between; padding: 24px 0; }
+        .logo { font-size: 18px; font-weight: 800; letter-spacing: 0.5px; background: var(--grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-links a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500; margin-left: 30px; transition: color .2s; }
+        .nav-links a:hover { color: var(--accent-a); }
+
+        .hero { padding: 64px 0 60px; }
+        .badge { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; color: #0e7490; border: 1px solid #b8e6ee; background: #e6f6fa; padding: 6px 16px; border-radius: 999px; margin-bottom: 24px; }
+        h1 { font-size: clamp(36px, 5.6vw, 56px); font-weight: 800; line-height: 1.08; letter-spacing: -0.8px; margin-bottom: 20px; }
+        h1 .grad { background: var(--grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p.lede { font-size: 18px; color: var(--muted); max-width: 600px; margin-bottom: 28px; }
+        .cta { display: inline-flex; gap: 14px; }
+        a.btn { padding: 12px 26px; border-radius: 12px; font-weight: 600; font-size: 15px; text-decoration: none; transition: transform .15s, box-shadow .2s; }
+        a.btn.solid { background: var(--grad); color: #fff; box-shadow: 0 8px 26px rgba(14,165,233,0.28); }
+        a.btn.solid:hover { transform: translateY(-2px); }
+        a.btn.ghost { border: 1px solid var(--border); color: var(--ink); }
+        a.btn.ghost:hover { border-color: var(--accent-a); }
+
+        section { padding: 52px 0; border-top: 1px solid var(--border); }
+        .tag { font-size: 12px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; background: var(--grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 10px; }
+        h2 { font-size: 28px; font-weight: 800; letter-spacing: -0.3px; margin-bottom: 16px; }
+        section > p.lead { color: var(--muted); font-size: 16px; max-width: 620px; margin-bottom: 26px; }
+
+        .about-row { padding: 18px 0; border-bottom: 1px solid var(--border); }
+        .about-row:last-child { border-bottom: none; }
+        .about-row strong { display: block; font-size: 16px; margin-bottom: 4px; }
+        .about-row span { font-size: 14px; color: var(--muted); }
+
+        .game { padding: 22px 0; border-bottom: 1px solid var(--border); }
+        .game:last-child { border-bottom: none; }
+        .game-name { font-size: 19px; font-weight: 700; margin-bottom: 6px; display: flex; align-items: center; gap: 10px; }
+        .status { font-size: 11px; font-weight: 600; padding: 3px 12px; border-radius: 999px; letter-spacing: .5px; }
+        .status.live { color: #047857; background: #e6f7ef; border: 1px solid #bbe8d2; }
+        .status.soon { color: #b45309; background: #fef4e0; border: 1px solid #f3dcae; }
+        .game-desc { font-size: 14px; color: var(--muted); }
+
+        .values { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+        @media (max-width: 620px) { .values { grid-template-columns: 1fr; } }
+        .value { padding: 24px; background: var(--card); border: 1px solid var(--border); border-radius: 16px; transition: border-color .2s, transform .2s, box-shadow .2s; }
+        .value:hover { border-color: #93d4e3; transform: translateY(-3px); box-shadow: 0 10px 30px rgba(14,165,233,0.10); }
+        .value .n { font-size: 13px; font-weight: 800; background: var(--grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 8px; }
+        .value-title { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+        .value-desc { font-size: 14px; color: var(--muted); }
+
+        .update { padding: 16px 0; border-bottom: 1px solid var(--border); }
+        .update:last-child { border-bottom: none; }
+        .update-date { font-size: 12px; font-weight: 700; color: #0e7490; letter-spacing: .5px; }
+        .update-text { font-size: 15px; color: #274a55; }
+
+        .faq { padding: 16px 0; border-bottom: 1px solid var(--border); }
+        .faq:last-child { border-bottom: none; }
+        .faq-q { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+        .faq-a { font-size: 14px; color: var(--muted); }
+
+        .contact-block { margin-top: 20px; padding: 28px; border-radius: 16px; background: var(--card); border: 1px solid var(--border); }
+        .contact-line { font-size: 15px; color: #274a55; margin-bottom: 8px; }
+        .contact-line a { background: var(--grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; font-weight: 600; }
+        .contact-line a:hover { text-decoration: underline; }
+
+        footer { padding: 40px 0 52px; color: var(--muted); font-size: 13px; margin-top: 8px; border-top: 1px solid var(--border); }
+        .footer-links { margin-bottom: 10px; }
+        .footer-links a { color: var(--muted); text-decoration: none; margin-right: 22px; }
+        .footer-links a:hover { color: var(--accent-a); }
+
+        @media (max-width: 640px) {
+            .nav-links a { margin-left: 16px; font-size: 13px; }
+            .hero { padding: 48px 0 44px; }
+            .cta { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <nav>
+            <div class="logo">PIXEL WAVE</div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#games">Games</a>
+                <a href="#values">Values</a>
+                <a href="#updates">Updates</a>
+                <a href="#faq">FAQ</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+
+        <header class="hero">
+            <div class="badge">✦ INDEPENDENT GAME STUDIO</div>
+            <h1>Ride the wave of<br><span class="grad">great games.</span></h1>
+            <p class="lede">Pixel Wave Game Studio is an independent game studio making smooth, stylish and instantly fun games for players around the world.</p>
+            <div class="cta">
+                <a class="btn solid" href="#games">See our games</a>
+                <a class="btn ghost" href="#contact">Get in touch</a>
+            </div>
+        </header>
+
+        <section id="about">
+            <div class="tag">About Us</div>
+            <h2>Who we are</h2>
+            <p class="lead">Pixel Wave started with one idea: games should feel smooth, look clean, and be easy to jump into. We build crisp, satisfying titles designed for quick, joyful sessions.</p>
+            <div class="about-row"><strong>Our Mission</strong><span>To craft polished, colorful games that players genuinely enjoy and come back to.</span></div>
+            <div class="about-row"><strong>Our Approach</strong><span>Clean design, fluid mechanics, and careful polish in every single frame.</span></div>
+            <div class="about-row"><strong>Our Audience</strong><span>Everyone who loves simple, accessible and memorable casual games.</span></div>
+        </section>
+
+        <section id="games">
+            <div class="tag">Our Games</div>
+            <h2>What we've made</h2>
+            <div class="game">
+                <div class="game-name">Pixel Wave <span class="status live">Live</span></div>
+                <div class="game-desc">Our flagship title — a smooth, vibrant arcade game built for satisfying short sessions.</div>
+            </div>
+            <div class="game">
+                <div class="game-name">More titles <span class="status soon">In Development</span></div>
+                <div class="game-desc">New casual games are on the way. Stay tuned for the next wave.</div>
+            </div>
+        </section>
+
+        <section id="values">
+            <div class="tag">What We Believe</div>
+            <h2>Our values</h2>
+            <div class="values">
+                <div class="value"><div class="n">01</div><div class="value-title">Fluid &amp; Smooth</div><div class="value-desc">Every interaction feels buttery — no lag, no friction, just flow.</div></div>
+                <div class="value"><div class="n">02</div><div class="value-title">Bright &amp; Bold</div><div class="value-desc">Vivid worlds and crisp visuals that pop on any screen.</div></div>
+                <div class="value"><div class="n">03</div><div class="value-title">Instant Fun</div><div class="value-desc">Simple rules, fast onboarding, and fun from the first moment.</div></div>
+                <div class="value"><div class="n">04</div><div class="value-title">Made for Everyone</div><div class="value-desc">Accessible by design — pick up, play, and enjoy anytime.</div></div>
+            </div>
+        </section>
+
+        <section id="updates">
+            <div class="tag">News &amp; Updates</div>
+            <h2>What's new</h2>
+            <div class="update"><div class="update-date">2026 · September</div><div class="update-text">Pixel Wave is live — ride the wave and start playing now.</div></div>
+            <div class="update"><div class="update-date">2026 · August</div><div class="update-text">The studio is riding high. New titles are in active development.</div></div>
+        </section>
+
+        <section id="faq">
+            <div class="tag">FAQ</div>
+            <h2>Common questions</h2>
+            <div class="faq"><div class="faq-q">Are your games free to play?</div><div class="faq-a">Yes — free to download and play, supported by optional ads and in-game purchases.</div></div>
+            <div class="faq"><div class="faq-q">Do you collect my personal data?</div><div class="faq-a">Only the minimum needed to run and improve the games. See our Privacy Policy for details.</div></div>
+            <div class="faq"><div class="faq-q">Can I partner or collaborate with you?</div><div class="faq-a">We love talking to players and partners — reach out using the details below.</div></div>
+            <div class="faq"><div class="faq-q">How do I report a problem?</div><div class="faq-a">Email us and we'll look into it as soon as we can. Your feedback makes our games better.</div></div>
+        </section>
+
+        <section id="contact">
+            <div class="tag">Contact</div>
+            <h2>Get in touch</h2>
+            <p class="lead">Questions, feedback, or business inquiries — we'd love to hear from you.</p>
+            <div class="contact-block">
+                <div class="contact-line">Pixel Wave Game Studio</div>
+                <div class="contact-line">Email: <a href="mailto:geraldharve37@gmail.com">geraldharve37@gmail.com</a></div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-links">
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+            </div>
+            <div>&copy; 2026 Pixel Wave Game Studio. All rights reserved.</div>
+        </footer>
+    </div>
+</body>
+</html>
