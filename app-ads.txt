@@ -1,5 +1,5 @@
 ＃Admob
-google.com, pub-4851988408280050, DIRECT, f08c47fec0942fa0
+google.com, pub-2368191291532374, DIRECT, f08c47fec0942fa0
 ＃Meta
 facebook.com, 825372703542227, DIRECT, c3e20eee3f780d68
 # Applovin--------
@@ -9,7 +9,7 @@ bidease.com, bidease_seller_26, RESELLER
 contextweb.com , 562615, RESELLER, 89ff185a4c4e857c
 gamaigroup.com, 423056, RESELLER
 improvedigital.com, 2602, RESELLER
-indexexchange.com, 211341, RESELLER, 50b1c356f2c5c8fc
+indexexchange.com, 211341, RESELLER, 50b1c356f2c5c8fc 
 loopme.com, 11303, RESELLER, 6c8d5f95897a5a3b
 loopme.com, 11424, RESELLER, 6c8d5f95897a5a3b
 media.net, 8CU12AQ1Y, RESELLER
@@ -40,6 +40,21 @@ xandr.com, 14082, RESELLER
 yieldmo.com, 3591550211052216798, RESELLER, 6a92c77cfc3d2258
 zmaticoo.com, 5135655, RESELLER
 #Bigo
+bigo.sg,d9q7oh8yon,DIRECT
+smaato.com, 1100060475, RESELLER, 07bcf65f187117b4
+risecodes.com, 6a952bfdeb73a000010a2f63, RESELLER
+yieldmo.com, 4159765376676077684, RESELLER
+adingo.jp, 31595, RESELLER
+vistars.ai, d7njl5dbhjes73cnd8tg, RESELLER
+gravite.net, c6f2f6708dc1f6e2ae1165c0a861b3b0, RESELLER
+openx.com, 564879531, RESELLER, 6a698e2ec38604c6
+adorphic.com, 4067, RESELLER
+taurusx.com, 80657, RESELLER
+smaato.com, 1100060477, RESELLER, 07bcf65f187117b4
+omni-dex.io, 100108, RESELLER
+insticator.com, 4022291c-df72-416d-98ba-ab42fb0696d3, RESELLER, b3511ffcafb23a32
+pubnative.net, 1018308, RESELLER, d641df8625486a7b
+bid-matrix.com, d576e3be59319075, RESELLER
 bigo.sg,avczlpnyvj,DIRECT
 adingenious.com, 70392, RESELLER
 start.io, 115550145, RESELLER
@@ -2265,3 +2280,18 @@ acexchange.co.kr, 1562884725, RESELLER
 mman.kr, 32102, RESELLER
 myfeature.tv, N1fNlXquFCVDX3gt6MJN, RESELLER
 verve.com, 5897, RESELLER, 0c8f5958fc2d6270
+bigo.sg,d9q7oh8yon,DIRECT
+smaato.com, 1100060475, RESELLER, 07bcf65f187117b4
+risecodes.com, 6a952bfdeb73a000010a2f63, RESELLER
+yieldmo.com, 4159765376676077684, RESELLER
+adingo.jp, 31595, RESELLER
+vistars.ai, d7njl5dbhjes73cnd8tg, RESELLER
+gravite.net, c6f2f6708dc1f6e2ae1165c0a861b3b0, RESELLER
+openx.com, 564879531, RESELLER, 6a698e2ec38604c6
+adorphic.com, 4067, RESELLER
+taurusx.com, 80657, RESELLER
+smaato.com, 1100060477, RESELLER, 07bcf65f187117b4
+omni-dex.io, 100108, RESELLER
+insticator.com, 4022291c-df72-416d-98ba-ab42fb0696d3, RESELLER, b3511ffcafb23a32
+pubnative.net, 1018308, RESELLER, d641df8625486a7b
+bid-matrix.com, d576e3be59319075, RESELLER
